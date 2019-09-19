@@ -12,4 +12,7 @@ cnpm run dev
 # 构建
 npm run build
 
+# 恢复mongodb数据库
+mongorestore -h 127.0.0.1:27017 -d test --dir ~/backstage mongodb
+
 ```
