@@ -15,7 +15,7 @@
                     </el-menu-item>
                 </router-link>
 
-                <template  v-for="item in items" >
+                <template v-for="item in items">
 
                     <el-submenu v-if="item.children" :index="item.path" :key="item.path">
 
@@ -50,24 +50,25 @@
                         name: "系统管理",
                         path: "fund",
                         children: [
-                            { path: "userlist", name: "用户管理" },
-
-                            ]
+                            {
+                                path: "userlist", name: "用户管理"
+                            }
+                        ]
                     },
                     {
                         icon: "fa-money",
                         name: "公众号管理",
                         path: "fund",
                         children: [
-                            { path: "MediaManage", name: "媒介管理" },
-                            { path: "RepresentManage", name: "代理管理" },
-                            { path: "PlatManage", name: "平台管理" },
-                            { path: "StationManage", name: "站点号" },
-                            { path: "OAManage", name: "公众号" },
-                            { path: "InRecordManage", name: "充值记录" },
-                            { path: "MediaManage", name: "收入记录" },
-                            { path: "MediaManage", name: "代理账号" },
-                            { path: "MediaManage", name: "推广链接" },
+                            {path: "MediaManage", name: "媒介管理"},
+                            {path: "RepresentManage", name: "代理管理"},
+                            {path: "PlatManage", name: "平台管理"},
+                            {path: "StationManage", name: "站点号"},
+                            {path: "OAManage", name: "公众号"},
+                            {path: "InRecordManage", name: "充值记录"},
+                            {path: "", name: "收入记录"},
+                            {path: "", name: "代理账号"},
+                            {path: "", name: "推广链接"},
 
                         ]
                     },
@@ -76,9 +77,9 @@
                         name: "信息管理",
                         path: "info",
                         children: [
-                            { path: "infoshow", name: "个人信息" },
+                            {path: "infoshow", name: "个人信息"},
 
-                            ]
+                        ]
                     }
                 ]
             };
@@ -94,19 +95,24 @@
         background-color: #324057;
         z-index: 99;
     }
+
     .el-menu {
         border: none;
     }
+
     .fa-margin {
         margin-right: 5px;
     }
+
     .el-menu-vertical-demo:not(.el-menu--collapse) {
         width: 180px;
         min-height: 400px;
     }
+
     .el-menu-vertical-demo {
         width: 35px;
     }
+
     .el-submenu .el-menu-item {
         min-width: 180px;
     }
@@ -115,6 +121,7 @@
     .hiddenDropname {
         display: none;
     }
+
     a {
         text-decoration: none;
     }

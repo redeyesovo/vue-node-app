@@ -15,10 +15,10 @@
                     </el-date-picker>
                 </el-form-item>
                 <el-form-item>
-                    <el-button type="primary" size ="small" icon="search" @click='handleSearch()'>筛选</el-button>
+                    <el-button type="primary" size="small" icon="search" @click='handleSearch()'>筛选</el-button>
                 </el-form-item>
                 <el-form-item class="btnLeft">
-                    <el-button type="primary" size ="small" icon="view" @click='handleAdd()'>添加</el-button>
+                    <el-button type="primary" size="small" icon="view" @click='handleAdd()'>添加</el-button>
                 </el-form-item>
             </el-form>
         </div>
@@ -41,7 +41,7 @@
                         prop="streamid" label="流水号" width="200" align="center"
                 ></el-table-column>
                 <el-table-column
-                        prop="streamtime" label="时间" width="200" align="center"
+                        prop="streamtime" label="时间" width="200" align="center" sortable
                 ></el-table-column>
                 <el-table-column
                         prop="medianame" label="媒介" width="200" align="center"
@@ -83,13 +83,15 @@
                                 icon='edit'
                                 size="small"
                                 @click='handleEdit(scope.$index,scope.row)'
-                        >编辑</el-button>
+                        >编辑
+                        </el-button>
                         <el-button
                                 type="delete"
                                 icon='delete'
                                 size="small"
                                 @click='handleDelete(scope.$index,scope.row)'
-                        >删除</el-button>
+                        >删除
+                        </el-button>
                     </template>
                 </el-table-column>
             </el-table>
@@ -118,12 +120,13 @@
 
 <script>
     import DialogInrecord from "../components/DialogInrecord";
+
     export default {
         name: "InrecordManage",
         data() {
             return {
 
-                time:null,
+                time: null,
                 tableData: [],
                 allTableData: [],
                 filterTableData: [],
@@ -164,8 +167,8 @@
             this.getInrecord();
             this.getCurrentDateTime();
         },
-        methods:{
-            getCurrentDateTime(){
+        methods: {
+            getCurrentDateTime() {
                 return moment(formData.date).format('YYYY-MM-DD HH:mm:ss')
             },
             getInrecord() {
@@ -180,7 +183,7 @@
                     this.setPaginations();
                 });
             },
-            handleEdit(index,row){
+            handleEdit(index, row) {
                 //console.log(123);
                 this.dialog = {
                     show: true,
@@ -198,7 +201,7 @@
                     id: row._id
                 };
             },
-            handleDelete(index,row){
+            handleDelete(index, row) {
                 //console.log(456);
                 // 删除
                 this.$axios.delete(`/api/inrecords/delete/${row._id}`).then(res => {
@@ -206,7 +209,7 @@
                     this.getInrecord();
                 });
             },
-            handleAdd(){
+            handleAdd() {
                 //console.log(789);
                 this.dialog = {
                     show: true,
@@ -254,7 +257,7 @@
                     return index < page_size;
                 });
             },
-            handleSearch(){
+            handleSearch() {
                 if (!this.search_data.startTime || !this.search_data.endTime) {
                     this.$message({
                         type: "warning",
@@ -285,9 +288,11 @@
         padding: 16px;
         box-sizing: border-box;
     }
+
     .btnLeft {
         float: left;
     }
+
     .pagination {
         text-align: right;
         margin-top: 10px;

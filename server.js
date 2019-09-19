@@ -46,6 +46,7 @@ app.use('/api/stations', stations);
 app.use('/api/oas', oas);
 app.use('/api/inrecords', inrecords);
 
+// 本地开发5000端口
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
