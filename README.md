@@ -6,12 +6,10 @@
 # 安装依赖环境
 cnpm install
 
-# serve with hot reload at localhost:8080
-npm run dev
+# serve with hot reload at localhost:8080项目将在本地8080端口运行（同时启动5000端口的mongodb服务）
+cnpm run dev
 
-# build for production with minification
+# 构建
 npm run build
 
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
