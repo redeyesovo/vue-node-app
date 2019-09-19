@@ -15,10 +15,17 @@
                     </el-date-picker>
                 </el-form-item>
                 <el-form-item>
+<<<<<<< HEAD
                     <el-button type="primary" size="small" icon="search" @click='handleSearch()'>筛选</el-button>
                 </el-form-item>
                 <el-form-item class="btnLeft">
                     <el-button type="primary" size="small" icon="view" @click='handleAdd()'>添加</el-button>
+=======
+                    <el-button type="primary" size ="small" icon="search" @click='handleSearch()'>筛选</el-button>
+                </el-form-item>
+                <el-form-item class="btnLeft">
+                    <el-button type="primary" size ="small" icon="view" @click='handleAdd()'>添加</el-button>
+>>>>>>> refs/remotes/origin/master
                 </el-form-item>
             </el-form>
         </div>
@@ -41,7 +48,11 @@
                         prop="streamid" label="流水号" width="200" align="center"
                 ></el-table-column>
                 <el-table-column
+<<<<<<< HEAD
                         prop="streamtime" label="时间" width="200" align="center" sortable
+=======
+                        prop="streamtime" label="时间" width="200" align="center"
+>>>>>>> refs/remotes/origin/master
                 ></el-table-column>
                 <el-table-column
                         prop="medianame" label="媒介" width="200" align="center"
@@ -83,15 +94,23 @@
                                 icon='edit'
                                 size="small"
                                 @click='handleEdit(scope.$index,scope.row)'
+<<<<<<< HEAD
                         >编辑
                         </el-button>
+=======
+                        >编辑</el-button>
+>>>>>>> refs/remotes/origin/master
                         <el-button
                                 type="delete"
                                 icon='delete'
                                 size="small"
                                 @click='handleDelete(scope.$index,scope.row)'
+<<<<<<< HEAD
                         >删除
                         </el-button>
+=======
+                        >删除</el-button>
+>>>>>>> refs/remotes/origin/master
                     </template>
                 </el-table-column>
             </el-table>
@@ -120,13 +139,20 @@
 
 <script>
     import DialogInrecord from "../components/DialogInrecord";
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/origin/master
     export default {
         name: "InrecordManage",
         data() {
             return {
 
+<<<<<<< HEAD
                 time: null,
+=======
+                time:null,
+>>>>>>> refs/remotes/origin/master
                 tableData: [],
                 allTableData: [],
                 filterTableData: [],
@@ -167,8 +193,13 @@
             this.getInrecord();
             this.getCurrentDateTime();
         },
+<<<<<<< HEAD
         methods: {
             getCurrentDateTime() {
+=======
+        methods:{
+            getCurrentDateTime(){
+>>>>>>> refs/remotes/origin/master
                 return moment(formData.date).format('YYYY-MM-DD HH:mm:ss')
             },
             getInrecord() {
@@ -183,7 +214,11 @@
                     this.setPaginations();
                 });
             },
+<<<<<<< HEAD
             handleEdit(index, row) {
+=======
+            handleEdit(index,row){
+>>>>>>> refs/remotes/origin/master
                 //console.log(123);
                 this.dialog = {
                     show: true,
@@ -201,7 +236,11 @@
                     id: row._id
                 };
             },
+<<<<<<< HEAD
             handleDelete(index, row) {
+=======
+            handleDelete(index,row){
+>>>>>>> refs/remotes/origin/master
                 //console.log(456);
                 // 删除
                 this.$axios.delete(`/api/inrecords/delete/${row._id}`).then(res => {
@@ -209,7 +248,11 @@
                     this.getInrecord();
                 });
             },
+<<<<<<< HEAD
             handleAdd() {
+=======
+            handleAdd(){
+>>>>>>> refs/remotes/origin/master
                 //console.log(789);
                 this.dialog = {
                     show: true,
@@ -257,7 +300,11 @@
                     return index < page_size;
                 });
             },
+<<<<<<< HEAD
             handleSearch() {
+=======
+            handleSearch(){
+>>>>>>> refs/remotes/origin/master
                 if (!this.search_data.startTime || !this.search_data.endTime) {
                     this.$message({
                         type: "warning",
@@ -288,11 +335,17 @@
         padding: 16px;
         box-sizing: border-box;
     }
+<<<<<<< HEAD
 
     .btnLeft {
         float: left;
     }
 
+=======
+    .btnLeft {
+        float: left;
+    }
+>>>>>>> refs/remotes/origin/master
     .pagination {
         text-align: right;
         margin-top: 10px;
